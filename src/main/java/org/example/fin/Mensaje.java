@@ -12,13 +12,18 @@ import org.springframework.data.annotation.Id;
  * @author Jr.Armando
  */
 public class Mensaje {
+    
+   
+    
+    
+    
     @Id
     private String id;
 
     public Mensaje() {
     }
     
-    
+    private String cuerpo;
     private String titulo;
 
     public String getId() {
@@ -37,9 +42,10 @@ public class Mensaje {
         this.titulo = titulo;
     }
 
-    public Mensaje(String id, String titulo) {
+    public Mensaje(String id, String titulo,String cuerpo) {
         this.id = id;
         this.titulo = titulo;
+        this.cuerpo=cuerpo;
     }
 
     public Mensaje(String titulo) {
@@ -48,7 +54,15 @@ public class Mensaje {
 
     @Override
     public String toString() {
-        return "Mensaje{" + "id=" + id + ", titulo=" + titulo + '}';
+        return "Mensaje{" + "id=" + id + ", titulo=" + titulo +"cuerpo=" + cuerpo+ '}';
+    }
+
+    public String getCuerpo() {
+        return cuerpo;
+    }
+
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
     }
     
     
